@@ -22,42 +22,76 @@ h1,h2{
 }
 
 /* Banner*/
+
 .headerContainer2{
     position: relative;
+    margin:0;
 }
+
 .logo{
+    margin-top: 0.2em;
     width: 12em;
     height: 2.5em;
 }
+
 .banner{
     width: 100%;
     height: 17em;
     object-fit: cover;
     object-position: 45% 55%;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 .bannerMessage{
     position: absolute; 
     font-size: 1.3em;
-    transform: translate(0.8em,-7.8em);
+    transform: translate(0.7em,-7.5em);
 }
-.bannerDetails{
+
+.detail1{
+    grid-area: time;
+}
+.icon .a{
     position: absolute;
-    font-size: 0.8em;
-    list-style-type: none;
-    margin-left: 0.4em;
-    padding:0;
-    transform: translate(1em,-10em);
+    grid-area:timeIcon;
+}
+.detail2{
+    grid-area: serving;
+}
+.icon .b{
+    grid-area:servingIcon;
+}
+.detail3{
+    grid-area: lunch;
+}
+.icon .c{
+    grid-area:lunchIcon;
 }
 .printButton{
-    position: absolute; 
+    position: absolute;
     padding: 0.5em 1em;
     background-color:#006837;
     color:white;
     border-radius: 0.5em;
-    bottom:2em;
-    left:1.2em;
+    bottom:1.2em;
+    left:1.4em;
 }
+
+.bannerDetails{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "timeIcon time"
+    "servingIcon serving"
+    "lunchIcon lunch";
+    row-gap: 0.5em;
+    column-gap: 1.2em;
+    font-size: 0.6em;
+    line-height: 1.2em;
+    transform: translate(2em, -11em);
+}
+
 
 /*navigation*/
 
@@ -66,8 +100,10 @@ h1,h2{
     flex-direction: column;
     list-style-type: none;
     padding:0;
-    margin-top:-0.3em;
+    margin:0;
     border: 1px solid #006837; 
+    margin-top: -0.3em;
+
 }
 .menuItem{
     padding:0.8em 0em 0.8em 1em;
@@ -104,7 +140,7 @@ figcaption{
     font-size: 0.8em;
 }
 .sendoffMessage{
-    padding: 1em;
+    padding: 1.3em 1.3em 1.3em 0.9em;
     text-align: center;
     color:#006837;
 }
@@ -116,26 +152,29 @@ figcaption{
 .follow{
     text-align:center;
 }
-.a{
-    grid-area:iconA;
+.social1{
+    grid-area:social1;
 }
-.b{
-    grid-area:iconB;
+.social2{
+    grid-area:social2;
 }
-.c{
-    grid-area:iconC;
+.social3{
+    grid-area:social3;
 }
+
 .option1{
-    grid-area: facebook;
+    line-height: 1em;
+    padding:0.6em;
     color: black;
 }
+
 .option2{
-    grid-area: instagram;
+    line-height: 1em;
+    padding:0.6em;
     color: black;
  }
 .option3{
-    grid-area: twitter;
-    margin-left: 0.4em;
+    padding:0.6em;
     color: black;
  }
 
@@ -145,32 +184,49 @@ figcaption{
 }
 
 .followOptions{ 
+    list-style-type: none;
     width: 100%;
     display: grid;
-    justify-items: start;
+    justify-items: center;
     align-items: center;
-    grid-template-columns: 40% 1fr 1fr 45%;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     row-gap: 1em;
     grid-template-areas: 
-    ". iconA facebook ."
-    ". iconB instagram ."
-    ". iconC twitter ." ;
+    "social1"
+    "social2" 
+    "social3";
 }
 
 .icon{
-    height:1.5em;
+    height:1.2em;
     width:auto;
+    justify-self: center;
+    align-self: end;
 }
 footer p{
     margin:1em;
 }
+footer ul{
+    padding:0em;
+}
+
 
 @media screen and (min-width:420px){
     .mainContent img{
         width:100%;
         height:20em;
         object-fit:cover;
+    }
+    .bannerMessage{
+        font-size: 1.7em;
+        transform: translate(0.7em,-7em);
+
+    }
+    .bannerDetails{
+        font-size: 0.8em;
+        transform: translate(2em, -10em);
+    }
 }
 
 @media screen and (min-width:600px){
@@ -179,31 +235,19 @@ footer p{
         height: 25em;
     }
     .bannerMessage{
+        position: absolute; 
         font-size: 2.5em;
-        transform: translate(0.6em,-5.8em);
+        transform: translate(0.7em,-6.3em);
     }
     .bannerDetails{
-        font-size: 1em;
-        list-style-type: none;
-        margin-left: 0.4em;
-        padding:0;
-        transform: translate(1.2em,-10em);
+        position: absolute;
+        font-size:1em;
     }
     .printButton{
         font-size: 1em;
         padding: 0.5em 1em;
-        bottom:1.5em;
-        left:1.5em;
     }  
-    .followOptions{ 
-        grid-template-columns: 45% 1fr 1fr 45%;
-        grid-template-rows: 1fr 1fr 1fr;
-        row-gap: 1em;
-        grid-template-areas: 
-        ". iconA facebook ."
-        ". iconB instagram ."
-        ". iconC twitter ." ;
-    }
+  
     .menu{
         flex-direction: row;
         justify-content: space-evenly;
@@ -222,17 +266,17 @@ footer p{
     }
 
     .followOptions{ 
+        list-style-type: none;
+        width: 100%;
         display: grid;
-        justify-items: start;
-        align-items: end;
-        grid-template-columns: 1fr 4% 4% 1fr 4% 4% 1fr 4% 4% 1fr;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         row-gap: 1em;
-        column-gap: 0.5em;
         grid-template-areas: 
-        ". iconA facebook .  iconB instagram . iconC twitter .";
+        "social1 social2 social3";
     }
-
 }
 @media screen and (min-width:800px){
     .mainContent img{
@@ -264,32 +308,27 @@ footer p{
         height: 28em;
     }
     .bannerMessage{
-        font-size: 3em;
-        transform: translate(0.6em,-5.8em);
+        position: absolute;
+        font-size: 3.3em;
+        transform: translate(0.6em,-6em);
     }
     .bannerDetails{
-        font-size: 1.3em;
-        list-style-type: none;
-        margin-left: 0.4em;
-        padding:0;
-        transform: translate(1.2em,-9.5em);
+        position: absolute;
+        font-size: 1.2em;
+        margin-top:-0.2em;
     }
     .printButton{
         font-size: 1.2em;
         padding: 0.5em 1em;
-        bottom:1.5em;
-        left:1.5em;
     }  
     figure{
         margin: 0em 7em;
     }
-
     .mainContent img{
         width:30em;
         height:25em;
         object-fit: cover;
     }
-    
     .menu{
         flex-direction: row;
         justify-content: space-evenly;
@@ -300,18 +339,6 @@ footer p{
     }
     .lastMenuItem{
         padding:1em;
-    }
-
-    .followOptions{ 
-        display: grid;
-        justify-items: start;
-        align-items: end;
-        grid-template-columns: 1fr 4% 4% 1fr 4% 4% 1fr 4% 4% 1fr;
-        grid-template-rows: 1fr;
-        row-gap: 1em;
-        column-gap: 0px;
-        grid-template-areas: 
-        ". iconA facebook .  iconB instagram . iconC twitter .";
     }
 
 }
