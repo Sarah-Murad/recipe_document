@@ -12,12 +12,6 @@ h1,h2{
     line-height: 1.2em;
 }
 
-.mainContent img{
-    width:100%;
-    height:10em;
-    object-fit:cover;
-}
-
 /*top header*/
 .headerContainer1{
     display: flex;
@@ -37,7 +31,7 @@ h1,h2{
 }
 .banner{
     width: 100%;
-    height: 15em;
+    height: 17em;
     object-fit: cover;
     object-position: 45% 55%;
     opacity: 0.6;
@@ -95,6 +89,13 @@ h1,h2{
     background-color: #F2F2F2;
     margin-top: -1.2em;
 }
+
+.mainContent img{
+    width:100%;
+    height:10em;
+    object-fit:cover;
+}
+
 .subheading{
     padding-top: 1em;
 }
@@ -144,13 +145,13 @@ figcaption{
 }
 
 .followOptions{ 
+    width: 100%;
     display: grid;
     justify-items: start;
     align-items: center;
-    grid-template-columns: 45% 1fr 1fr 45%;
+    grid-template-columns: 40% 1fr 1fr 45%;
     grid-template-rows: 1fr 1fr 1fr;
     row-gap: 1em;
-    column-gap: 0px;
     grid-template-areas: 
     ". iconA facebook ."
     ". iconB instagram ."
@@ -161,25 +162,102 @@ figcaption{
     height:1.5em;
     width:auto;
 }
+footer p{
+    margin:1em;
+}
 
+@media screen and (min-width:420px){
+    .mainContent img{
+        width:100%;
+        height:20em;
+        object-fit:cover;
+}
+
+@media screen and (min-width:600px){
+    .banner{
+        width: 100%;
+        height: 25em;
+    }
+    .bannerMessage{
+        font-size: 2.5em;
+        transform: translate(0.6em,-5.8em);
+    }
+    .bannerDetails{
+        font-size: 1em;
+        list-style-type: none;
+        margin-left: 0.4em;
+        padding:0;
+        transform: translate(1.2em,-10em);
+    }
+    .printButton{
+        font-size: 1em;
+        padding: 0.5em 1em;
+        bottom:1.5em;
+        left:1.5em;
+    }  
+    .followOptions{ 
+        grid-template-columns: 45% 1fr 1fr 45%;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 1em;
+        grid-template-areas: 
+        ". iconA facebook ."
+        ". iconB instagram ."
+        ". iconC twitter ." ;
+    }
+    .menu{
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .menuItem{
+        padding:1em;
+        border:none;
+    }
+    .lastMenuItem{
+        padding:1em;
+    }
+    .mainContent img{
+        width:100%;
+        height:25em;
+        object-fit:cover;
+    }
+
+    .followOptions{ 
+        display: grid;
+        justify-items: start;
+        align-items: end;
+        grid-template-columns: 1fr 4% 4% 1fr 4% 4% 1fr 4% 4% 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 1em;
+        column-gap: 0.5em;
+        grid-template-areas: 
+        ". iconA facebook .  iconB instagram . iconC twitter .";
+    }
+
+}
+@media screen and (min-width:800px){
+    .mainContent img{
+        width:100%;
+        height:30em;
+        object-fit:cover;
+    }
+}
 
 @media screen and (min-width:1025px){
     
     h2{
-        margin-left: 1em;
+        margin-left: 0.5em;
     }
     h3{
-        margin-left: 2em;
+        margin-left: 2.5em;
     }
     p{
-        margin-left: 2.4em;
+        margin-left: 3em;
     }
-    .maincontent ul{
-        margin-left: 2.4em;
+    .mainContent ul{
+        margin-left: 3em;
     }
-    .maincontent ol{
-        margin-left: 2.4em;
-
+    .mainContent ol{
+        margin-left: 3em;
     }
     .banner{
         width: 100%;
@@ -203,15 +281,12 @@ figcaption{
         left:1.5em;
     }  
     figure{
-        text-align: center;
-    }
-    figcaption{
-        text-align: start;
+        margin: 0em 7em;
     }
 
     .mainContent img{
         width:30em;
-        height:20em;
+        height:25em;
         object-fit: cover;
     }
     
@@ -230,8 +305,8 @@ figcaption{
     .followOptions{ 
         display: grid;
         justify-items: start;
-        align-items: center;
-        grid-template-columns: 1fr 3% 3% 1fr 3% 3% 1fr 3% 3% 1fr;
+        align-items: end;
+        grid-template-columns: 1fr 4% 4% 1fr 4% 4% 1fr 4% 4% 1fr;
         grid-template-rows: 1fr;
         row-gap: 1em;
         column-gap: 0px;
